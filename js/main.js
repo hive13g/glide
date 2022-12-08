@@ -30,9 +30,16 @@ var geometry = new THREE.PlaneBufferGeometry(10,10);
 geometry.rotateX(-1.6);
 
 /* COORDINATES (PORTA NIGRA)*/
-var zoom = 14;
+var zoom = document.getElementById("mzoom").value;
 var lon = 6.643997;
 var lat = 49.759671;
+
+const selectElement = document.querySelector("input");
+
+selectElement.addEventListener('change', (event) => {
+    location.reload();
+});
+
 
 /* MAP TILE TRANSFORMATION */
 function lo2t(lon,zoom){
